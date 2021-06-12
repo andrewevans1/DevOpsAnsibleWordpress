@@ -1,0 +1,18 @@
+---
+- hosts: webservers
+  become: true
+  vars_files:
+    - vars/default.yaml
+
+  tasks:
+    - name: Install UFW
+      apt: 
+        name: "ufw"
+        state: present
+
+    - name: "Allow HTTP on port {{ http_port }}"
+      ufw:
+        rule: allow
+        port: "{{ http_port }}"
+        proto: tcp
+

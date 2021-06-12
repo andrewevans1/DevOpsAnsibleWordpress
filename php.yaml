@@ -1,0 +1,22 @@
+---
+- hosts: webservers
+  become: true
+  vars_files:
+    - vars/default.yaml
+
+  tasks:
+    - name: Install PHP
+      apt: 
+        name: "{{ item }}"
+        state: present
+      with_items:
+       - php
+       - php-mysql
+       - libapache2-mod-php
+
+    - name: Set up PHP info page
+      template:
+        src: "files/info.php.j2"
+        dest: "/var/www/{{ http_host }}/info.php"
+
+
