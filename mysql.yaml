@@ -12,21 +12,32 @@
         - mysql-server
         - mysql-client
 
-    - name: Start the MySQL service
-      service: 
-        name: mysql 
-        state: started
+    - name: Sets the root password
+      mysql_user:
+        name: root
+        password: password
 
     - name: Remove the test database
       mysql_db: 
         name: test 
         state: absent
+        login_user: root
+        login_password: password
 
     - name: Remove anonymous user accounts
       mysql_user:
         name: ''
         host_all: yes
         state: absent
+        login_user: root
+        login_password: password
+
+    - name: Create DB for WordPress
+      mysql_db:
+        name: "wordpress"
+        state: present
+        login_user: root
+        login_password: password
 
     - name: Create deploy user for mysql
       mysql_user: 

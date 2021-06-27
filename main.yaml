@@ -1,0 +1,13 @@
+---
+- name: Apache Install
+  import_playbook: apache2.yaml
+
+- name: MySQL Install
+  import_playbook: mysql.yaml
+
+- name: PHP Install
+  import_playbook: php.yaml
+
+- name: Expose Port
+  import_playbook: firewall.yaml
+

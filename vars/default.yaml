@@ -1,0 +1,7 @@
+---
+app_user: "aevans"
+http_host: "host"
+http_conf: "conf.conf"
+http_port: "80"
+disable_default: true
+php_modules: [ 'php_curl', 'php-gd', 'php-mbstring', 'php-xml', 'php-xmlrpc', 'php-soap', 'php-intl', 'php-zip' ]

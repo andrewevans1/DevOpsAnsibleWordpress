@@ -1,0 +1,15 @@
+<VirtualHost *:{{ http_port }}>
+  ServerAdmin admin@localhost
+  ServerName {{ http_host }}
+  ServerAlias www.{{ http_host }}
+  DocumentRoot /var/www/{{ http_host }}
+  
+  <Directory /var/www/{{ http_host }}>
+    Options -Indexes
+  </Directory>
+
+  <IfModule mod_dir.c>
+    DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+  </IfModule>
+
+</VirtualHost>
