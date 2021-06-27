@@ -16,11 +16,10 @@
 
     - name: Install PHP Extensions
       apt:
-        name: {{ item }}
+        name: "{{ item }}"
         update_cache: yes
         state: present
-      with_items:
-        - {{ php_modules }}
+      loop: "{{ php_modules }}"
 
     - name: Set up PHP info page
       template:

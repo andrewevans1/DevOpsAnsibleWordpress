@@ -4,7 +4,7 @@ http_host: "host"
 http_conf: "conf.conf"
 http_port: "80"
 disable_default: true
-php_modules: [ 'php_curl', 'php-gd', 'php-mbstring', 'php-xml', 'php-xmlrpc', 'php-soap', 'php-intl', 'php-zip' ]
+php_modules: [ 'php-curl', 'php-gd', 'php-mbstring', 'php-xml', 'php-xmlrpc', 'php-soap', 'php-intl', 'php-zip' ]
 
 mysql_root_password: "password"
 mysql_db: "wordpress"

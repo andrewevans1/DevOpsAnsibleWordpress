@@ -4,6 +4,7 @@
   vars_files:
     - vars/default.yaml
 
+  tasks:
   - name: Download and unpack latest WordPress
     unarchive:
       src: https://wordpress.org/latest.tar.gz
