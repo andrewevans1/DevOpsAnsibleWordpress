@@ -8,6 +8,9 @@
 - name: PHP Install
   import_playbook: php.yaml
 
+- name: WordPress Install
+  import_playbook: wordpress.yaml
+
 - name: Expose Port
   import_playbook: firewall.yaml
 
